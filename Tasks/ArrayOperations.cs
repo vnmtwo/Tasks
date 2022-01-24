@@ -74,7 +74,7 @@ namespace Tasks
 			for (int i = 1; i < array.Length; i++)
 			{
 				if (array[i] == null)
-					throw new ArgumentException(i + " element is null");
+					throw new ArgumentNullException(i + " element is null");
 
 				if (array[i].Equals(v)) c++;
 				else

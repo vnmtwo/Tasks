@@ -82,10 +82,10 @@ namespace Tests
         public void MaxEqualSequenceLength_ArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() =>
-                ArrayOperations.RemoveEvenCounted<int>(null));
+                ArrayOperations.MaxEqualSequenceLength<int>(null));
 
             Assert.Throws<ArgumentNullException>(() =>
-                ArrayOperations.RemoveEvenCounted(new string[] { "1", null, "2" }));
+                ArrayOperations.MaxEqualSequenceLength(new string[] { "1", null, "2" }));
         }
     }
 }
