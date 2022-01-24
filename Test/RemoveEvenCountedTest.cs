@@ -39,4 +39,53 @@ namespace Tests
                 ArrayOperations.RemoveEvenCounted<int>(null));
         }
     }
+
+    public class MaxEqualSequenceLengthTest
+    {
+        [Test]
+        public void MaxEqualSequenceLength_Normal()
+        {
+            //value type
+            int[] a = new int[0];
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(a), 0);
+
+            a = new int[] { 0, 0 };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(a), 2);
+
+            a = new int[] { 0, 0, 1 };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(a), 2);
+
+            a = new int[] { 0, 1, 1 };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(a), 2);
+
+            a = new int[] { 0, 1, 1, 0 };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(a), 2);
+
+            //reference type
+            string[] s = new string[0];
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(s), 0);
+
+            s = new string[] { "0", "0" };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(s), 2);
+
+            s = new string[] { "0", "0", "1" };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(s), 2);
+
+            s = new string[] { "0", "1", "1" };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(s), 2);
+
+            s = new string[] { "0", "1", "1", "0" };
+            Assert.AreEqual(ArrayOperations.MaxEqualSequenceLength(s), 2);
+        }
+
+        [Test]
+        public void MaxEqualSequenceLength_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+                ArrayOperations.RemoveEvenCounted<int>(null));
+
+            Assert.Throws<ArgumentNullException>(() =>
+                ArrayOperations.RemoveEvenCounted(new string[] { "1", null, "2" }));
+        }
+    }
 }
