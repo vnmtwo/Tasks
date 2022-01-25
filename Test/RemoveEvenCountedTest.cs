@@ -35,8 +35,11 @@ namespace Tests
         [Test]
         public void RemoveEvenCounted_ArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(()=>
+            Assert.Throws<NullReferenceException>(()=>
                 ArrayOperations.RemoveEvenCounted<int>(null));
+
+            Assert.Throws<ArgumentNullException>(() =>
+                ArrayOperations.RemoveEvenCounted<string>(new string[] { null, "1" }));
         }
     }
 
@@ -81,7 +84,7 @@ namespace Tests
         [Test]
         public void MaxEqualSequenceLength_ArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() =>
+            Assert.Throws<NullReferenceException>(() =>
                 ArrayOperations.MaxEqualSequenceLength<int>(null));
 
             Assert.Throws<ArgumentNullException>(() =>

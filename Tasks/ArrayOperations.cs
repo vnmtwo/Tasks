@@ -13,15 +13,14 @@ namespace Tasks
 		/// <returns>
 		/// New array without even-counted elements.
 		/// </returns>
-		/// <exception cref="ArgumentNullException">
+		/// <exception cref="NullReferenceException">
 		/// If array is null.
+		/// </exception>
+		/// <exception cref="ArgumentNullException">
 		/// If array element is null.
 		/// </exception>
 		public static T[] RemoveEvenCounted<T>(T[] array)
         {
-			if (array == null)
-				throw new ArgumentNullException("Input array is  null");
-
 			Dictionary<T, bool> d = new Dictionary<T, bool>(array.Length);
 
 			for (int i = 0; i < array.Length; i++) // O(n)
@@ -54,14 +53,14 @@ namespace Tasks
 		/// <returns>
 		/// Returns maximum length of continuous sequence of equals elements in input array.
 		/// </returns>
-		/// <exception cref="ArgumentNullException">
+		/// <exception cref="NullReferenceException">
 		/// If input array is null.
+		/// </exception>
+		/// <exception cref="ArgumentNullException">
 		/// If element in input array is null.
 		/// </exception>
 		public static int MaxEqualSequenceLength<T>(T[] array)
 		{
-			if (array == null)
-				throw new ArgumentNullException("Input array is null");
 			if (array.Length == 0)
 				return 0;
 			
