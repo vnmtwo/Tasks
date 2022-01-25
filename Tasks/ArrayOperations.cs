@@ -56,9 +56,6 @@ namespace Tasks
 		/// <exception cref="NullReferenceException">
 		/// If input array is null.
 		/// </exception>
-		/// <exception cref="ArgumentNullException">
-		/// If element in input array is null.
-		/// </exception>
 		public static int MaxEqualSequenceLength<T>(T[] array)
 		{
 			if (array.Length == 0)
@@ -68,14 +65,9 @@ namespace Tasks
 			int maxc = 1;
 			int c = 1;
 
-			object q;
-
 			for (int i = 1; i < array.Length; i++)
 			{
-				if (array[i] == null)
-					throw new ArgumentNullException(i + " element is null");
-
-				if (array[i].Equals(v)) c++;
+				if (Comparer<T>.Equals(array[i] ,v)) c++;
 				else
 				{
 					v = array[i];
