@@ -3,7 +3,7 @@ using System;
 using Tasks;
 
 namespace Tests
-{ 
+{
 
     public class MaxEqualSequenceLengthTest
     {

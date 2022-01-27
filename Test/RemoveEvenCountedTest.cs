@@ -35,7 +35,7 @@ namespace Tests
         [Test]
         public void RemoveEvenCounted_ArgumentNullException()
         {
-            Assert.Throws<NullReferenceException>(()=>
+            Assert.Throws<NullReferenceException>(() =>
                 ArrayOperations.RemoveEvenCounted<int>(null));
 
             Assert.Throws<ArgumentNullException>(() =>
